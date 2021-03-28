@@ -27,9 +27,8 @@
    							}
    					 }
           
-          var message = document.getElementById("htmlinput").value;
-			    console.log("Sending message to Unity: " + message);
-			    unityInstance.SendMessage("Bridge", "SendToUnity", String(flag));
+			    unityInstance.SendMessage("BridgeX", "SendToUnity", String(flag));
+          unityInstance.SendMessage("BridgeX", "PL_check");
    			}	
   </script>
   <body>
@@ -39,9 +38,6 @@
         <div class="webgl-logo"></div>
         <div class="fullscreen" onclick="unityInstance.SetFullscreen(1)"></div>
         <div class="title">WebGL_test</div>
-      </div>
-      <div>
-        <input placeholder="Enter text..." id="htmlinput"><button onclick="IsPC()">Send to Unity</button>
       </div>
     </div>
   </body>
