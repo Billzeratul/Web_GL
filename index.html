@@ -12,25 +12,6 @@
       var unityInstance = UnityLoader.instantiate("unityContainer", "Build/output.json", {onProgress: UnityProgress});
     </script>
   </head>
-  <script>
-    function IsPC()
-   			{
-          var userAgentInfo = navigator.userAgent;
-   					 var Agents = ["Android", "iPhone", "SymbianOS", "Windows Phone", "iPad", "iPod"];
-   					 var flag = true;
-   					 for (var v = 0; v < Agents.length; v++)
-   					 {
-   						  if (userAgentInfo.indexOf(Agents[v]) > 0)
-   							{
-   								  flag = false;
-   			            break;
-   							}
-   					 }
-          
-			    unityInstance.SendMessage("BridgeX", "SendToUnity", String(flag));
-          unityInstance.SendMessage("BridgeX", "PL_check");
-   			}	
-  </script>
   <body>
     <div class="webgl-content">
       <div id="unityContainer" style="width: 960px; height: 600px"></div>
